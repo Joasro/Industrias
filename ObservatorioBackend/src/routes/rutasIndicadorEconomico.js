@@ -223,6 +223,7 @@ router.post('/',
         .notEmpty().withMessage('El código del país es obligatorio')
         .isString().withMessage('El código del país debe ser una cadena de texto')
         .isLength({ min: 3, max: 3 }).withMessage('El código del país debe tener 3 caracteres'),
+    passport.authenticate('jwt', { session: false }),
     controladorIndicadorEconomico.guardar
 );
 

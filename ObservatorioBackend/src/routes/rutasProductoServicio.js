@@ -230,6 +230,7 @@ router.post('/',
     body('fecha_lanzamiento')
         .optional()
         .isISO8601().withMessage('La fecha de lanzamiento debe ser una fecha válida'),
+        passport.authenticate('jwt', { session: false }),
     controladorProductoServicio.guardar
 );
 

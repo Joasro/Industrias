@@ -220,6 +220,7 @@ router.post('/',
     body('descripcion')
         .optional()
         .isString().withMessage('La descripción debe ser una cadena de texto'),
+        passport.authenticate('jwt', { session: false }),
     controladorEmpresa.guardar
 );
 router.put('/',
